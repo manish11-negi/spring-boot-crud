@@ -31,4 +31,14 @@ CustomerRepository customerRepository;
 		return "Record Deleted with Id->"+id;
 	}
 
+	public List<Customer> getCustomerByNeme(String name) {
+		
+		return customerRepository.findByName(name);
+	}
+
+	public List<Customer> getCustomerByNeme(String name, String contact) {
+		// TODO Auto-generated method stub
+		return customerRepository.findByNameAndContact(name,contact);
+	}
+
 }

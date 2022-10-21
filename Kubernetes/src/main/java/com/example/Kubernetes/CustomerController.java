@@ -27,6 +27,19 @@ public class CustomerController {
 		return customerService.getCustomer();
 		
 	}
+	@GetMapping("/customer/{name}")
+	public List<Customer> getCustomerbyName(@PathVariable String name) {
+		System.out.println("Name->"+name);
+		return customerService.getCustomerByNeme(name);
+		
+	}
+	
+	@GetMapping("/customer/{name}/{contact}")
+	public List<Customer> getCustomerbyNameAndContact(@PathVariable String name,@PathVariable String contact) {
+		System.out.println("Name->"+name+"  "+contact);
+		return customerService.getCustomerByNeme(name,contact);
+		
+	}
 	
 	@PostMapping("/customer")
 	public Customer createCustomer(@ RequestBody Customer customer) {
